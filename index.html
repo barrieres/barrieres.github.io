@@ -16,15 +16,40 @@
     }
     .title {
       text-align: center;
+      font-size: 3em;
+    }
+    header {
+      border-bottom: 1px solid blue;
+      font-size: 2em;
+    }
+    .menu {
+      padding: 5px;
+      text-align: center;
+    }
+    .menu a {
+      padding: 10px;
+      border-bottom: none;
+      text-decoration: none;
+    }
+    .menu a:hover {
+      text-decoration: underline overline;
     }
   </style>
 </head>
 <body>
   <div class="main">
     <h1 class="title">Barrie Res</h1>
-    <section>
+    <div class="menu">
+      <a href="#about">about</a>
+      <a href="#tools">tools</a>
+    </div>
+    <section id="about">
       <header>About Ingress</header>
       <p>about</p>
+    </section>
+    <section>
+      <header id="tools">Tools</header>
+      <p>tools</p>
     </section>
   </div>
 </body>
