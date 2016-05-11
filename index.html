@@ -19,9 +19,22 @@
       margin: 0px;
       padding: 0px;
     }
+    aside:before {
+        content: "";
+        background-image: url("/ingress.svg");
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-size: cover;
+        vertical-align: middle;
+    }
     aside {
       font-style: italic;
       color: rgb(57, 57, 57);
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 32px;
+      margin: 5px;
     }
     .main {
       max-width: 800px;
