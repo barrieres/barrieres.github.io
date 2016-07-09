@@ -119,7 +119,16 @@
       var form = document.querySelector('#request');
       ajax('http://intel.reallyawesomedomain.com:8080/ada/request', 'post')
       .data(new FormData(form))
-      .send(function(data) { 
+      .send(function(data) {
+        var res = document.querySelector('#response');
+        res.style.visibility = 'visible';
+        if (data.error) {
+          res.textContent = data.error;
+        } else if (data.code) {
+          res.textContent = 'Success! Now send this code in faction comms and we\'ll be in contact soon: ' + data.code;
+        } else {
+          res.textContent = 'Something horrible happened, ping @hansolo669';
+        }
         console.log(data); 
       });
     }
