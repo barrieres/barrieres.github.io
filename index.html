@@ -88,7 +88,7 @@
         </aside>
         <p>Welcome Agent, you've joined a great faction and a great team.</p>
         <form id="request">
-          <input type="text" palceholder="Agent Name" name="agent">
+          <input type="text" placeholder="Agent Name" name="agent">
           <input type="email" placeholder="email" name="email">
           <button>request code</button>
         </form>
@@ -113,10 +113,11 @@
   </div>
   <script src="/ajax.min.js"></script>
   <script>
-    document.addEventListner('submit', function(ev) {
+    var form = document.querySelector('#request');
+    form.addEventListner('submit', function(ev) {
       ev.preventDefault();
       ajax('http://intel.reallyawesomedomain.com:8080/ada/request', 'post')
-      .data(new FormData(document.querySelector('#request')))
+      .data(new FormData(form))
       .send(function(data) { 
         console.log(data); 
       });
