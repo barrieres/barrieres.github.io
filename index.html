@@ -112,6 +112,7 @@
           The world around you is not what it seems. The Resistance needs your help. It’s time to move.
         </aside>
         <p>Welcome Agent, you've joined a great faction and a great team.</p>
+        <p>Fill out the form below to request Access to our Slack community</p>
         <form id="request" onsubmit="request(event)">
           <input type="text" placeholder="Agent Name" name="agent">
           <input type="email" placeholder="Email" name="email">
@@ -152,7 +153,7 @@
           resp.textContent = data.error;
         } else if (data.code) {
           resp.style.background = '#1993ce';
-          resp.textContent = 'Success! Now send this code in faction comms and we\'ll be in contact soon: ' + data.code;
+          resp.textContent = 'Success! Now send this code in <a href="https://support.ingress.com/hc/en-us/articles/207012688-Talk-to-other-players-using-COMM"></a>faction comms</a> and we\'ll be in contact soon: ' + data.code;
         } else {
           resp.style.background = '#1993ce';
           resp.textContent = 'Something horrible happened, ping @hansolo669';
