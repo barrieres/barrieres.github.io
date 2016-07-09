@@ -87,6 +87,11 @@
     .menu a:hover {
       text-decoration: underline overline;
     }
+    
+    #request {
+      padding: 5px;
+      color: whitesmoke;
+    }
   </style>
 </head>
 <body>
@@ -140,14 +145,17 @@
       ajax('http://intel.reallyawesomedomain.com:8080/ada/request', 'post')
       .data(new FormData(form))
       .send(function(data) {
-        var res = document.querySelector('#response');
-        res.style.visibility = 'visible';
+        var resp = document.querySelector('#response');
+        resp.style.visibility = 'visible';
         if (data.error) {
-          res.textContent = data.error;
+          resp.style.background = '#ce1919';
+          resp.textContent = data.error;
         } else if (data.code) {
-          res.textContent = 'Success! Now send this code in faction comms and we\'ll be in contact soon: ' + data.code;
+          resp.style.background = '#1993ce';
+          resp.textContent = 'Success! Now send this code in faction comms and we\'ll be in contact soon: ' + data.code;
         } else {
-          res.textContent = 'Something horrible happened, ping @hansolo669';
+          resp.style.background = '#1993ce';
+          resp.textContent = 'Something horrible happened, ping @hansolo669';
         }
         console.log(data); 
       });
